@@ -1,0 +1,45 @@
+// Local Chromium/CDP smoke test of our own generated static page.
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {pathToFileURL} from 'node:url';
+const root=path.resolve(import.meta.dirname,'..');
+const tabs=await (await fetch('http://127.0.0.1:9237/json/list')).json();
+const target=tabs.find(t=>t.type==='page');
+const ws=new WebSocket(target.webSocketDebuggerUrl);
+await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
+let seq=0;const pending=new Map(),errors=[];
+ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(new Error(JSON.stringify(m.error))):p.resolve(m.result);}if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails);};
+const call=(method,params={})=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
+const evaluate=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw new Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+await call('Runtime.enable');await call('Page.enable');
+await call('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});
+await call('Page.navigate',{url:pathToFileURL(path.join(root,'dashboard.html')).href});
+for(let i=0;i<100;i++){if(await evaluate('!!window.pskovDashboard'))break;await new Promise(r=>setTimeout(r,150));}
+if(!await evaluate('!!window.pskovDashboard'))throw Error('Dashboard did not initialize: '+JSON.stringify(errors));
+const results=[];
+const keys=await evaluate('pskovDashboard.data.metrics.map(m=>m.key)');
+for(const key of keys){const result=await evaluate(`(()=>{pskovDashboard.selectMetric(${JSON.stringify(key)});return {metric:pskovDashboard.getMetric(),status:document.getElementById('status').textContent,chart:!!document.querySelector('#distribution svg'),rows:document.querySelectorAll('#data-table tbody tr').length};})()`);if(!result.chart||!result.rows)throw Error('Empty chart/table: '+key);results.push(result);}
+await evaluate(`pskovDashboard.selectMetric('provision_provision_strong');document.querySelector('#data-table .idbutton').click()`);
+const selection=await evaluate(`({title:document.getElementById('block-title').textContent,fields:document.querySelectorAll('#allfields tr').length})`);
+if(!selection.title.startsWith('Квартал')||selection.fields<30)throw Error('Selection did not work');
+await evaluate(`document.getElementById('scope').click()`);
+const scope=await evaluate(`document.getElementById('status').textContent`);
+if(!scope.includes('781'))throw Error('Scope filter failed');
+await evaluate(`document.getElementById('show-schools').click();document.getElementById('scope').click();document.getElementById('show-schools').click();pskovDashboard.selectMetric('density_fsi');document.getElementById('reset-map').click();`);
+await new Promise(r=>setTimeout(r,350));
+const resetCoverage=await evaluate('pskovDashboard.map.getBounds().contains(L.geoJSON(pskovDashboard.data.boundary).getBounds())');
+if(!resetCoverage)throw Error('Reset map does not cover city boundary');
+const audit=path.join(root,'results/pskov/audit');
+fs.writeFileSync(path.join(audit,'dashboard-desktop.png'),Buffer.from((await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false})).data,'base64'));
+fs.writeFileSync(path.join(audit,'dashboard-map-and-charts.png'),Buffer.from((await call('Page.captureScreenshot',{format:'png',clip:{x:0,y:550,width:1440,height:1700,scale:1},captureBeyondViewport:true})).data,'base64'));
+await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+await evaluate('window.pskovDashboard.map.invalidateSize();window.scrollTo(0,0)');
+await new Promise(r=>setTimeout(r,200));
+const mobile=await evaluate('({width:innerWidth,documentWidth:document.documentElement.scrollWidth})');
+if(mobile.documentWidth>mobile.width+1)throw Error('Mobile horizontal overflow: '+JSON.stringify(mobile));
+fs.writeFileSync(path.join(audit,'dashboard-mobile.png'),Buffer.from((await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false})).data,'base64'));
+if(errors.length)throw Error(JSON.stringify(errors));
+fs.writeFileSync(path.join(audit,'dashboard-browser-check.json'),JSON.stringify({status:'PASS',htmlSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'dashboard.html'))).digest('hex'),resetCoverage,source:'local file in separate Chromium profile',metrics:results,selection,scope,mobile,uncaughtErrors:errors},null,2));
+console.log(JSON.stringify({status:'PASS',metrics:keys.length,selection,mobile,uncaughtErrors:errors.length},null,2));
+await call('Browser.close');ws.close();
