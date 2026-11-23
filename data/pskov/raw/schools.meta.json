@@ -1,0 +1,13 @@
+{
+  "key": "4da6213755dc708a8a3406d48d34f7b8592c953e52428373624c54b1ff9a81ae",
+  "parameters": {
+    "tags": {
+      "amenity": "school"
+    },
+    "boundary_sha256": "926d61aba54568f17775249bc9b1fd12ce7900e21a3d0d845d6cb2e893e374a5",
+    "endpoint": "https://ovp.dresel.systems/api/interpreter",
+    "method": "bbox-get-polygon-filter-v1"
+  },
+  "retrieved_at": "2026-11-23T13:31:31.151131+00:00",
+  "sha256": "a895cd94ad3ab7e31b7ea5f66d0de249ae31ed4fd43b3efbc23482e88503e48c"
+}

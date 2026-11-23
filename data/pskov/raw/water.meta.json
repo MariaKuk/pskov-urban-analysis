@@ -1,0 +1,29 @@
+{
+  "key": "b020100ccac563cf6ab650b1cb719d7f80e3e20678a2fde44af19d8c9db5fd1f",
+  "parameters": {
+    "tags": {
+      "riverbank": true,
+      "reservoir": true,
+      "basin": true,
+      "dock": true,
+      "canal": true,
+      "pond": true,
+      "natural": [
+        "water",
+        "bay"
+      ],
+      "waterway": [
+        "river",
+        "canal",
+        "ditch"
+      ],
+      "landuse": "basin",
+      "water": "lake"
+    },
+    "boundary_sha256": "926d61aba54568f17775249bc9b1fd12ce7900e21a3d0d845d6cb2e893e374a5",
+    "endpoint": "https://ovp.dresel.systems/api/interpreter",
+    "method": "bbox-get-polygon-filter-v1"
+  },
+  "retrieved_at": "2026-11-23T13:26:52.739441+00:00",
+  "sha256": "e46c7d13619baf7d724f81c17c9cfade5aca205f883fc0c0a98e2c65b57e6d39"
+}

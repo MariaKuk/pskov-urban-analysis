@@ -1,0 +1,41 @@
+{
+  "key": "c2a6c5c435e2c9cbdb14d4e8860881831379b26bdfa7475d057eeda56f3f896e",
+  "parameters": {
+    "tags": {
+      "highway": [
+        "construction",
+        "crossing",
+        "living_street",
+        "motorway",
+        "motorway_link",
+        "motorway_junction",
+        "pedestrian",
+        "primary",
+        "primary_link",
+        "raceway",
+        "residential",
+        "road",
+        "secondary",
+        "secondary_link",
+        "services",
+        "tertiary",
+        "tertiary_link",
+        "track",
+        "trunk",
+        "trunk_link",
+        "turning_circle",
+        "turning_loop",
+        "unclassified"
+      ],
+      "service": [
+        "living_street",
+        "emergency_access"
+      ]
+    },
+    "boundary_sha256": "926d61aba54568f17775249bc9b1fd12ce7900e21a3d0d845d6cb2e893e374a5",
+    "endpoint": "https://ovp.dresel.systems/api/interpreter",
+    "method": "bbox-get-polygon-filter-v1"
+  },
+  "retrieved_at": "2026-11-23T13:26:52.739441+00:00",
+  "sha256": "417efaf2f4f95a7af23fe1c67965a98f973361d9b59450bf4b8976e169e7d048"
+}

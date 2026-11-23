@@ -1,0 +1,10 @@
+{
+  "key": "9811c927820a32b3fc9129ced173e2ff98bf0d09247c525c1e78243ed376fc5b",
+  "endpoint": "https://ovp.dresel.systems/api/interpreter",
+  "retrieved_at": "2026-11-23T13:31:31.151131+00:00",
+  "osm_metadata": {
+    "timestamp_osm_base": "2026-11-22T21:20:48Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "sha256": "10b372152824df78aaf6a6d13679d1004967ad0169c257ca59529e1f11a46fd8"
+}

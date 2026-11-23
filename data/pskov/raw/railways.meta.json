@@ -1,0 +1,13 @@
+{
+  "key": "27d5102eebadda2835b820c5be440645173221e6a256cd460f727e696d30e685",
+  "parameters": {
+    "tags": {
+      "railway": "rail"
+    },
+    "boundary_sha256": "926d61aba54568f17775249bc9b1fd12ce7900e21a3d0d845d6cb2e893e374a5",
+    "endpoint": "https://ovp.dresel.systems/api/interpreter",
+    "method": "bbox-get-polygon-filter-v1"
+  },
+  "retrieved_at": "2026-11-23T13:26:52.739441+00:00",
+  "sha256": "b5ab29def49725f47095ab9816ef9c0c4038f2f8004911407bd302f7528cb559"
+}
