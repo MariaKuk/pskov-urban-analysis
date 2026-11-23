@@ -1,0 +1,10 @@
+{
+  "output": "dashboard.html",
+  "bytes": 2642435,
+  "sha256": "a90b3c7dc4748216e3412d422574af0b1c8990fdebaa25a9eccdf8c639758ef7",
+  "data_sha256": "1ecd234766bca8bde8788daa7137b43bec00ffc4f0b786bb8f78c2c45b137445",
+  "primary_metrics": 15,
+  "features": 933,
+  "downloads": false,
+  "analytical_models_recomputed": false
+}

@@ -1,0 +1,16 @@
+metric,notebook_section,dashboard_control,geojson_field,dashboard
+fsi,7.2,FSI · интенсивность застройки,density_fsi,dashboard.html: map / distribution / table / selected block
+gsi,7.2,GSI · покрытие зданиями,density_gsi,dashboard.html: map / distribution / table / selected block
+mxi,7.2,MXI · жилая функция,density_mxi,dashboard.html: map / distribution / table / selected block
+l,7.2,L · средняя этажность,density_l,dashboard.html: map / distribution / table / selected block
+osr,7.2,OSR · открытое пространство,density_osr,dashboard.html: map / distribution / table / selected block
+share_living,7.2,Жилая площадь / пятно зданий,density_share_living,dashboard.html: map / distribution / table / selected block
+share_non_living,7.2,Нежилая площадь / пятно зданий,density_share_non_living,dashboard.html: map / distribution / table / selected block
+population,4,Население · модельная оценка,building_population,dashboard.html: map / distribution / table / selected block
+capacity,5,Школьные места · с оценками,school_capacity,dashboard.html: map / distribution / table / selected block
+provision_strong,7.1,Обеспеченность · в пределах порога,provision_provision_strong,dashboard.html: map / distribution / table / selected block
+provision_weak,7.1,Обеспеченность · расширенная,provision_provision_weak,dashboard.html: map / distribution / table / selected block
+area_accessibility,7.3,Доступность территории,area_accessibility,dashboard.html: map / distribution / table / selected block
+land_use,2,Землепользование по OSM,land_use,dashboard.html: map / distribution / table / selected block
+spacematrix_morphotype,7.2,Морфотип · Spacematrix,spacematrix_morphotype,dashboard.html: map / distribution / table / selected block
+strelka_morphotype,7.2,Морфотип · «Стрелка»,strelka_morphotype,dashboard.html: map / distribution / table / selected block

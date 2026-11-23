@@ -1,0 +1,122 @@
+[
+  {
+    "metric": "land_use",
+    "notebook_section": "2",
+    "definition": "OSM landuse mapped by rules",
+    "unit": "category",
+    "file": "landuse_blocks.geojson",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "population",
+    "notebook_section": "4",
+    "definition": "floor(living_area / 30); at least 1 in residential building",
+    "unit": "estimated persons",
+    "file": "buildings_blocks.geojson",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "capacity",
+    "notebook_section": "5",
+    "definition": "OSM capacity or BlocksNet imputation",
+    "unit": "places",
+    "file": "schools_blocks.geojson",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "provision_strong",
+    "notebook_section": "7.1",
+    "definition": "demand_within / demand",
+    "unit": "fraction",
+    "file": "school_provision.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "provision_weak",
+    "notebook_section": "7.1",
+    "definition": "(demand_within + demand_without) / demand",
+    "unit": "fraction",
+    "file": "school_provision.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "fsi",
+    "notebook_section": "7.2",
+    "definition": "A/S",
+    "unit": "m2/m2",
+    "file": "density.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "gsi",
+    "notebook_section": "7.2",
+    "definition": "clip(F/S, 0, 1)",
+    "unit": "fraction",
+    "file": "density.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "mxi",
+    "notebook_section": "7.2",
+    "definition": "clip(R/A, 0, 1)",
+    "unit": "fraction",
+    "file": "density.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "l",
+    "notebook_section": "7.2",
+    "definition": "max(A/F, 1)",
+    "unit": "floors",
+    "file": "density.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "osr",
+    "notebook_section": "7.2",
+    "definition": "(S-F)/A",
+    "unit": "m2/m2",
+    "file": "density.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "share_living",
+    "notebook_section": "7.2",
+    "definition": "R/F",
+    "unit": "m2/m2",
+    "file": "density.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "share_non_living",
+    "notebook_section": "7.2",
+    "definition": "N/F",
+    "unit": "m2/m2",
+    "file": "density.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "spacematrix_morphotype",
+    "notebook_section": "7.2",
+    "definition": "KMeans and BlocksNet interpretation",
+    "unit": "category",
+    "file": "spacematrix.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "strelka_morphotype",
+    "notebook_section": "7.2",
+    "definition": "BlocksNet thresholds",
+    "unit": "category",
+    "file": "strelka.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  },
+  {
+    "metric": "area_accessibility",
+    "notebook_section": "7.3",
+    "definition": "sum(t_ij*S_j)/sum(S_j)",
+    "unit": "minutes",
+    "file": "area_accessibility.csv",
+    "dashboard_status": "pending: create after notebook execution"
+  }
+]

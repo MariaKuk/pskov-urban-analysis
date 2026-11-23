@@ -1,0 +1,16 @@
+metric,notebook_section,definition,unit,file,dashboard_status
+land_use,2,OSM landuse mapped by rules,category,landuse_blocks.geojson,pending: create after notebook execution
+population,4,floor(living_area / 30); at least 1 in residential building,estimated persons,buildings_blocks.geojson,pending: create after notebook execution
+capacity,5,OSM capacity or BlocksNet imputation,places,schools_blocks.geojson,pending: create after notebook execution
+provision_strong,7.1,demand_within / demand,fraction,school_provision.csv,pending: create after notebook execution
+provision_weak,7.1,(demand_within + demand_without) / demand,fraction,school_provision.csv,pending: create after notebook execution
+fsi,7.2,A/S,m2/m2,density.csv,pending: create after notebook execution
+gsi,7.2,"clip(F/S, 0, 1)",fraction,density.csv,pending: create after notebook execution
+mxi,7.2,"clip(R/A, 0, 1)",fraction,density.csv,pending: create after notebook execution
+l,7.2,"max(A/F, 1)",floors,density.csv,pending: create after notebook execution
+osr,7.2,(S-F)/A,m2/m2,density.csv,pending: create after notebook execution
+share_living,7.2,R/F,m2/m2,density.csv,pending: create after notebook execution
+share_non_living,7.2,N/F,m2/m2,density.csv,pending: create after notebook execution
+spacematrix_morphotype,7.2,KMeans and BlocksNet interpretation,category,spacematrix.csv,pending: create after notebook execution
+strelka_morphotype,7.2,BlocksNet thresholds,category,strelka.csv,pending: create after notebook execution
+area_accessibility,7.3,sum(t_ij*S_j)/sum(S_j),minutes,area_accessibility.csv,pending: create after notebook execution
