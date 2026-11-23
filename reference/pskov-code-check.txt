@@ -1,0 +1,11 @@
+Matplotlib is building the font cache; this may take a moment.
+PROJECT_ROOT/.venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-11-23 14:24:25.880 | INFO     | blocksnet.blocks.aggregation.core:_preprocess_input:12 - Preprocessing input
+2026-11-23 14:24:25.882 | INFO     | blocksnet.blocks.aggregation.core:aggregate_objects:41 - Aggregating objects
+2026-11-23 14:24:25.904 | INFO     | blocksnet.blocks.aggregation.core:_preprocess_input:12 - Preprocessing input
+2026-11-23 14:24:25.905 | INFO     | blocksnet.blocks.aggregation.core:aggregate_objects:41 - Aggregating objects
+synthetic: в кварталах 2, вне кварталов 1
+PASS: 19 code cells parse; no outputs; imports, GeoJSON roundtrip, aggregation guards, map rendering, native CBC checked on synthetic objects.
+Pskov downloads and research calculations were NOT run.
+Final markdown additions checked: 37 total cells; code unchanged, syntax/nbformat validated; all outputs empty.

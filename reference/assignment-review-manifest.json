@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-23",
+  "status": "technical_checks_passed_formal_submission_incomplete",
+  "files": {
+    "examples/pskov.ipynb": "2dcb6a2e625ad34fb165621c2d87a23af3184e190913fa20ac65c08a71343023",
+    "dashboard.html": "a90b3c7dc4748216e3412d422574af0b1c8990fdebaa25a9eccdf8c639758ef7",
+    "build_dashboard.py": "aeaa648fd743e06e64d857cac547c2ab667ea9174adbf75f412e584e4fb669ec",
+    "REPORT.md": "702d404ad21cde42c4fb5ed8960895af8babc4083f110c0169365709d75a9db5",
+    "ASSIGNMENT_REVIEW.md": "686b35541c166d3fa1b83438df3e23e0b665bd2a42d306b9ec818e700090cdd7",
+    "results/pskov/blocks_metrics.geojson": "1ecd234766bca8bde8788daa7137b43bec00ffc4f0b786bb8f78c2c45b137445",
+    "results/pskov/audit/quality-report.json": "4a106da0ab2e26e5c6b6ca8d59759277421d033d4942eafc862645ed91a969b9",
+    "results/pskov/audit/dashboard-browser-check.json": "bb7a1e6da33192bad2e617006810cd4e475ce90c764b36e924db5c31b9d5b6fb"
+  },
+  "publication_copy_note": "Only local home path in notebook outputs was replaced with PROJECT_ROOT. Values and execution counts unchanged."
+}
