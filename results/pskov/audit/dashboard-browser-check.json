@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "htmlSha256": "a90b3c7dc4748216e3412d422574af0b1c8990fdebaa25a9eccdf8c639758ef7",
+  "resetCoverage": true,
+  "source": "local file in separate Chromium profile",
+  "metrics": [
+    {
+      "metric": "density_fsi",
+      "status": "Значений: 933 из 933. Единица: м²/м².",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "density_gsi",
+      "status": "Значений: 933 из 933. Единица: доля.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "density_mxi",
+      "status": "Значений: 571 из 933. Единица: доля.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "density_l",
+      "status": "Значений: 571 из 933. Единица: этажи.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "density_osr",
+      "status": "Значений: 571 из 933. Единица: м²/м².",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "density_share_living",
+      "status": "Значений: 571 из 933. Единица: м²/м².",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "density_share_non_living",
+      "status": "Значений: 571 из 933. Единица: м²/м².",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "building_population",
+      "status": "Значений: 933 из 933. Единица: чел..",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "school_capacity",
+      "status": "Значений: 933 из 933. Единица: мест.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "provision_provision_strong",
+      "status": "Значений: 322 из 933. Единица: % спроса.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "provision_provision_weak",
+      "status": "Значений: 322 из 933. Единица: % спроса.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "area_accessibility",
+      "status": "Значений: 781 из 933. Единица: мин.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "land_use",
+      "status": "Значений: 651 из 933. Единица: категория.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "spacematrix_morphotype",
+      "status": "Значений: 571 из 933. Единица: категория.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "strelka_morphotype",
+      "status": "Значений: 571 из 933. Единица: категория.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "snap_distance_m",
+      "status": "Значений: 933 из 933. Единица: м.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "transport_covered",
+      "status": "Значений: 933 из 933. Единица: категория.",
+      "chart": true,
+      "rows": 25
+    },
+    {
+      "metric": "reachable_area_share",
+      "status": "Значений: 781 из 933. Единица: % площади.",
+      "chart": true,
+      "rows": 25
+    }
+  ],
+  "selection": {
+    "title": "Квартал 3",
+    "fields": 53
+  },
+  "scope": "Значений: 322 из 781. Единица: % спроса.",
+  "mobile": {
+    "width": 390,
+    "documentWidth": 390
+  },
+  "uncaughtErrors": []
+}

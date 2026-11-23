@@ -1,0 +1,285 @@
+{
+  "checked_at": "2026-11-23T14:04:21.976765+00:00",
+  "executor": "same assistant, separate audit pass; not external independent review",
+  "python": "3.12.14",
+  "status": "PASS_WITH_LIMITATIONS",
+  "checks": [
+    {
+      "name": "Unique block IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Matrix IDs equal declared transport scope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unknown transport values outside coverage",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Finite nonnegative transport matrix",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Zero diagonal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Area conversion / CRS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "FSI formula",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "GSI formula",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "MXI formula",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "L formula",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "OSR formula",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Living-area ratio",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nonliving-area ratio",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Population reconstruction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No duplicate building assignment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No exact duplicate building geometries",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Independent population aggregation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Imputed school capacity = 250",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "School capacity preserved in aggregation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Demand rounding",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Demand balance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Capacity balance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Provision ratio",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Zero-demand provision remains missing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Area-weighted time (independent math.fsum)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reachable-only time equals full time in connected scope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reachable share = 1 inside main component",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "24 sampled routes vs independent NetworkX",
+      "passed": true,
+      "detail": "max abs error=0.00000097 min"
+    },
+    {
+      "name": "KMeans assignments vs explicit squared distances",
+      "passed": true,
+      "detail": "mismatches=0"
+    },
+    {
+      "name": "Strelka rules",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Every notebook code cell executed without errors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Saved method output tables complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/accessibility_matrix.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/aggregation_audit.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/area_accessibility.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/blocks_metrics.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/blocks_metrics.geojson",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/density.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/density_warnings.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/metric_coverage.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/metric_dictionary.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/school_name_conflicts.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/school_provision.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/school_provision_links.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/spacematrix.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/spacematrix_clusters.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Output SHA256: results/pskov/strelka.csv",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "limitations": [
+    "Transport estimates apply only to 781 covered blocks in the main connected network, not the whole municipality.",
+    "Speeds and straight-line access legs are assumptions; barriers, parking and congestion are not modelled.",
+    "OSM buildings and school capacities have extensive imputation; no official population or capacity validation.",
+    "The school demand parameter is applied to all modelled residents; specialist schools remain in the OSM-based teaching scenario.",
+    "Clusters describe this dataset; no predictive validation or causal claim is made.",
+    "Native numerical-library warnings were checked against explicit scalar sums, route calculations and centroid distances."
+  ],
+  "summary": {
+    "blocks": 933,
+    "area_km2": 91.76435935513028,
+    "city_area_km2": 95.49526920998356,
+    "population_estimate": 194541,
+    "school_objects": 41,
+    "school_places": 10365,
+    "transport_blocks": 781,
+    "transport_excluded": 152,
+    "transport_area_km2": 48.33626047808713,
+    "transport_population_estimate": 188423,
+    "transport_places": 10115,
+    "demand": 22766,
+    "demand_served": 10115,
+    "provision_fraction": 0.44430290784503207,
+    "mean_area_accessibility_min": 13.03525881262873,
+    "median_area_accessibility_min": 11.83775403774395,
+    "imputed_school_capacity_fraction": 0.975609756097561,
+    "imputed_floors_fraction": 0.82272697604595,
+    "classified_blocks": 571,
+    "no_demand_in_transport": 459,
+    "unknown_land_use": 282,
+    "snap_covered_median_m": 85.4216713593982,
+    "snap_covered_over_300m": 118,
+    "source_date": "2026-11-23T14:02:23.190516+00:00"
+  },
+  "input_sha256": {
+    "results/pskov/manifest.json": "ee7a2a327b5c6458fda8720047fd532132e0b70ab52cc962e041fe39ec3907d2",
+    "results/pskov/blocks_metrics.geojson": "1ecd234766bca8bde8788daa7137b43bec00ffc4f0b786bb8f78c2c45b137445",
+    "results/pskov/blocks_metrics.csv": "0cd7fc28d4f920399d10f379f2e5b0536b89b96a583679086f06a2bebdc8f9c0",
+    "data/pskov/processed/buildings.geojson": "29b3506a6d616fb39123d82191441a10c489b61d485e28ff730dd5ea1aba37e2",
+    "data/pskov/processed/schools.geojson": "dd0d8582726edc67092bade40645eb1cea883a4d558fd9271f7039f976b48b19",
+    "data/pskov/processed/accessibility_matrix.npz": "dee655c1ff85670a3d146b0de4226e83c077f1ccf20f5616d3e5d6b76ef529d5"
+  }
+}
