@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "archive_sha256": "b6fd4ed9bbe9762434adbe7f32297a59a59ef7240e3872ace3ed588c9ab29591",
+  "files_verified": 45,
+  "standalone_extracted_start": true,
+  "baseline_deficit": 12651,
+  "manual_scenario_reduction": 600,
+  "browser_checks": 16,
+  "model_api_tests": 9,
+  "experiment_checks": 26,
+  "scope": 781,
+  "search_checked": 781,
+  "search_failed": 0,
+  "best_count": 756
+}
