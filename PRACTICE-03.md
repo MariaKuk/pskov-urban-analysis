@@ -8,9 +8,9 @@
 
 **Windows:** установите Python 3.12 x64 с Python Launcher, распакуйте архив, откройте `school-placement/setup-windows.cmd`, дождитесь установки и полного расчёта (несколько минут), затем откройте `start-windows.cmd`. Браузер откроется автоматически. Интернет нужен только для первоначальной установки зависимостей.
 
-[Автоматическая проверка на Windows](https://github.com/MariaKuk/pskov-urban-analysis/actions/workflows/windows.yml).
+**Проверка Windows x64 пройдена:** установка с нуля, запуск через `.cmd`, HTTP API, все 781 размещение и все 756 равноценных лучших кварталов. [Протокол успешного запуска](https://github.com/MariaKuk/pskov-urban-analysis/actions/runs/45376311288). [Контрольные суммы и границы проверки](PRACTICE-03-CHECKS.json). Отчёты `audit/` и `QUALITY_REPORT.md` внутри архива сохраняют первоначальные проверки на Mac; более поздняя проверка Windows зафиксирована по этим ссылкам.
 
-**macOS:** из корня проекта с настроенным окружением практики 2:
+**macOS:** после скачивания обновлённого архива один раз выполните `.venv/bin/python school-placement/experiment.py`, чтобы обновить сохранённые сценарии для своего окружения. Затем из корня проекта с настроенным окружением практики 2:
 
 ```bash
 .venv/bin/python school-placement/server.py
