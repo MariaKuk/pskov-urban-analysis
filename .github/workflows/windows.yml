@@ -1,0 +1,48 @@
+name: Windows compatibility
+on:
+  push:
+    paths:
+      - school-placement.zip
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          architecture: x64
+      - name: Extract standalone package into a path with spaces and Cyrillic
+        shell: pwsh
+        run: Expand-Archive school-placement.zip -DestinationPath 'Windows test Псков'
+      - name: Install using the user launcher and verify baseline and scenarios
+        shell: cmd
+        working-directory: Windows test Псков/school-placement
+        run: setup-windows.cmd
+      - name: Run model and HTTP tests
+        shell: cmd
+        working-directory: Windows test Псков/school-placement
+        run: .venv\Scripts\python.exe -X utf8 tests.py
+      - name: Recompute all 781 placements on Windows
+        shell: cmd
+        working-directory: Windows test Псков/school-placement
+        run: .venv\Scripts\python.exe -X utf8 experiment.py
+      - name: Verify exhaustive result
+        shell: cmd
+        working-directory: Windows test Псков/school-placement
+        run: .venv\Scripts\python.exe -X utf8 -c "import json; d=json.load(open('results/experiment.json',encoding='utf-8')); assert d['search_checked']==781 and d['search_failed']==0; assert len(d['auto_best_ids'])==756; assert all(s['summary']['reduction']==600 for s in d['scenarios']); print('PASS: 781 placements, 756 tied best, A/B/C reproduced')"
+      - name: Save Windows evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-checks
+          path: |
+            Windows test Псков/school-placement/audit/platform-check.json
+            Windows test Псков/school-placement/audit/model-api-tests.json
+            Windows test Псков/school-placement/audit/independent-lp.json
+            Windows test Псков/school-placement/results/experiment.json
+            Windows test Псков/school-placement/results/search-600.json
