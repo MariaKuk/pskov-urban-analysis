@@ -6,7 +6,11 @@
 
 Распакуйте архив в корень этого проекта. Появится папка `school-placement`. Исходные файлы практики 2 менять не нужно.
 
-Из корня проекта с настроенным окружением практики 2:
+**Windows:** установите Python 3.12 x64 с Python Launcher, распакуйте архив, откройте `school-placement/setup-windows.cmd`, дождитесь успешной проверки, затем откройте `start-windows.cmd`. Браузер откроется автоматически. Интернет нужен только для первоначальной установки зависимостей.
+
+[Автоматическая проверка на Windows](https://github.com/MariaKuk/pskov-urban-analysis/actions/workflows/windows.yml).
+
+**macOS:** из корня проекта с настроенным окружением практики 2:
 
 ```bash
 .venv/bin/python school-placement/server.py
